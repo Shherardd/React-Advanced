@@ -1,5 +1,8 @@
 import React from 'react'
+import { Category } from './components/Category'
 
-const App = () => <h1>Hello there</h1>
+const App = () => (
+  <Category />
+)
 
 export default App
