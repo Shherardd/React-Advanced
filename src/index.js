@@ -1,6 +1,7 @@
 import React from 'react'
 import reactDOM from 'react-dom'
+import App from './app'
 
-const app = document.getElementById('app')
+const appDOM = document.getElementById('app')
 
-reactDOM.render(<h1>Hello there</h1>, app)
+reactDOM.render(App, appDOM)
