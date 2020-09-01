@@ -1,8 +1,8 @@
 import * as React from 'react'
-
-function Logo (props) {
+import { Svg } from './styles'
+export const Logo = props => {
   return (
-    <svg
+    <Svg
       width={155.108}
       height={121.405}
       viewBox='172.446 14.298 155.108 121.405'
@@ -46,8 +46,6 @@ function Logo (props) {
         />
       </g>
       <style />
-    </svg>
+    </Svg>
   )
 }
-
-export default Logo
