@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './styles'
 export const ListOfCategories = () => {
-  const [categories, setCategories] = useState(mockCategories)
+  const [categories, setCategories] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,13 +11,19 @@ export const ListOfCategories = () => {
       setCategories(data)
     }
     fetchData()
-  })
+  }, [])
 
-  return (
-    <List>
+  const renderList = (fixed) =>
+    <List className={fixed ? 'fixed' : ''}>
       {
         categories.map(category => <Item key={category.id}><Category {...category} /></Item>)
       }
     </List>
+
+  return (
+    <>
+      {renderList()}
+      {renderList(true)}
+    </>
   )
 }
