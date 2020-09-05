@@ -24,7 +24,7 @@ export const ListOfCategories = () => {
   const { categories, loading } = useCategoriesData()
   useEffect(function () {
     const onScroll = e => {
-      console.log('scrolled')
+      // console.log('scrolled')
       const newShowFixed = window.scrollY > 220
       showFixed !== newShowFixed && setShowFixed(newShowFixed)
     }
