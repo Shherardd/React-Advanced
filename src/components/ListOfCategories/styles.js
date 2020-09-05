@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components'
-import { fadeIn, fadeOut } from '../../styles/animations'
+import { slideIn, slideOut } from '../../styles/animations'
 
 export const List = styled.ul`
   display: flex;
   overflow: scroll;
   width: 100%;
   ${props => props.fixed && css`
-    ${fadeIn({ time: '.3s' })}
+    ${slideIn({ time: '.3s' })}
       background: #fff;
       border-radius: 20px;
       margin: 0 auto;
@@ -20,7 +20,7 @@ export const List = styled.ul`
       top: -20px;
       transform: scale(.5);`}
       ${props => props.fixed === false && css`
-        ${fadeOut({ time: '.3s' })}
+        ${slideOut({ time: '.3s' })}
           background: #fff;
           border-radius: 20px;
           margin: 0 auto;

@@ -1,6 +1,6 @@
 import { keyframes, css } from 'styled-components'
 
-const fadeInKeyframes = keyframes`
+const slideInKeyframes = keyframes`
     from {
         filter: blur(5px);
         opacity: 0;
@@ -14,7 +14,7 @@ const fadeInKeyframes = keyframes`
     }
 `
 
-const fadeOutKeyframes = keyframes`
+const slideOutKeyframes = keyframes`
     from {
         top:-20px;
         opacity: 100%;
@@ -26,8 +26,22 @@ const fadeOutKeyframes = keyframes`
     }
 `
 
-export const fadeIn = ({ time = '1s', type = 'ease' } = {}) =>
-  css`animation: ${time} ${fadeInKeyframes} ${type};`
+export const slideIn = ({ time = '1s', type = 'ease' } = {}) =>
+  css`animation: ${time} ${slideInKeyframes} ${type};`
 
-export const fadeOut = ({ time = '1s', type = 'ease' } = {}) =>
-  css`animation: ${time} ${fadeOutKeyframes} ${type};`
+export const slideOut = ({ time = '1s', type = 'ease' } = {}) =>
+  css`animation: ${time} ${slideOutKeyframes} ${type};`
+
+const blurInKeyframes = keyframes`
+    from {
+        filter: blur(5px);
+        opacity: 0;
+    }
+
+    to {
+        filter: blur(0px);
+        opacity: 100%;
+    }
+`
+export const blurIn = ({ time = '1s', type = 'ease' } = {}) =>
+  css`animation: ${time} ${blurInKeyframes} ${type};`
