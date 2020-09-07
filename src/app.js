@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/jsx-indent */
 import React from 'react'
 import { ListOfCategories } from './components/ListOfCategories'
 import { GlobalStyle } from './styles/GlobalStyles'
@@ -7,6 +9,7 @@ import { Logo } from './components/Logo'
 const App = () => {
   const urlParams = new window.URLSearchParams(window.location.search)
   const detailId = urlParams.get('detail')
+  // console.log(window.location.search)  --> empty string if there isnt qury into searchbar
   // console.log(detailId)
   return (
     <>
