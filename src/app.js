@@ -1,4 +1,5 @@
 import React from 'react'
+import { Router } from '@reach/router'
 import { GlobalStyle } from './styles/GlobalStyles'
 import { PhotoCardWithQuery } from './container/PhotoCardWithQuery'
 import { Logo } from './components/Logo'
@@ -15,7 +16,10 @@ const App = () => {
       {
         detailId
           ? <PhotoCardWithQuery id={detailId} />
-          : <Home />
+          : <Router>
+            <Home path='/' />
+            <Home path='/pet/:od' />
+            </Router>
       }
     </>
   )
