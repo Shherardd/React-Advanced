@@ -1,11 +1,8 @@
-/* eslint-disable react/jsx-closing-tag-location */
-/* eslint-disable react/jsx-indent */
 import React from 'react'
-import { ListOfCategories } from './components/ListOfCategories'
 import { GlobalStyle } from './styles/GlobalStyles'
-import { ListOfPhotoCards } from './container/ListOfPhotoCards'
 import { PhotoCardWithQuery } from './container/PhotoCardWithQuery'
 import { Logo } from './components/Logo'
+import { Home } from './pages/home'
 const App = () => {
   const urlParams = new window.URLSearchParams(window.location.search)
   const detailId = urlParams.get('detail')
@@ -18,10 +15,7 @@ const App = () => {
       {
         detailId
           ? <PhotoCardWithQuery id={detailId} />
-          : <>
-            <ListOfCategories />
-            <ListOfPhotoCards categoryId={2} />
-          </>
+          : <Home />
       }
     </>
   )
