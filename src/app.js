@@ -4,6 +4,7 @@ import { GlobalStyle } from './styles/GlobalStyles'
 import { Logo } from './components/Logo'
 import { Home } from './pages/home'
 import { Detail } from './pages/detail'
+import { NavBar } from './components/NavBar'
 const App = () => {
   const urlParams = new window.URLSearchParams(window.location.search)
   const detailId = urlParams.get('detail')
@@ -18,6 +19,7 @@ const App = () => {
         <Home path='/pet/:od' />
         <Detail path='/detail/:detailId' />
       </Router>
+      <NavBar />
     </>
   )
 }
