@@ -26,7 +26,7 @@ const renderProp = ({ loading, error, data = {} }) => {
     return <p>{error.message}</p>
   }
   const { photos = {} } = data
-  console.log(data)
+  // console.log(data)
   return <ListOfPhotoCardsComponent data={data} />
 }
 
