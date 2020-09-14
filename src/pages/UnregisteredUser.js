@@ -6,7 +6,12 @@ export const UnregisteredUser = () => (
   <Context.Consumer>
     {
       ({ isAuth, activateAuth }) => {
-        return (<UserForm onSubmit={activateAuth} />)
+        return (
+          <>
+            <UserForm onSubmit={activateAuth} title='Registrarse' />
+            <UserForm title='Iniciar Sesion' onSubmit={activateAuth} />
+          </>
+        )
       }
     }
   </Context.Consumer>
