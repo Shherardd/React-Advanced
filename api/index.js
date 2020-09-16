@@ -48,6 +48,10 @@ app.get('/categories', function (req, res) {
   res.send(categories)
 })
 
+app.get('/', function (req, res) {
+  res.send('this is an API')
+})
+
 if (!process.env.NOW_REGION) {
   app.listen(PORT, () => {
     console.log(`Listening at http://localhost:${PORT}/graphql`)
