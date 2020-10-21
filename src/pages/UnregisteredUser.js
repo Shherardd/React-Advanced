@@ -16,7 +16,11 @@ export const UnregisteredUser = () => (
                   const onSubmit = ({ email, password }) => {
                     const input = { email, password }
                     const variables = { input }
-                    register({ variables }).then(activateAuth).catch((e) => { console.log('Ooops! ') })
+                    register({ variables }).then(({ data }) => {
+                      const { signup } = data
+                      activateAuth(signup)
+                    }
+                    ).catch((e) => { console.log('Ooops! ') })
                   }
                   const errorMsg = error && 'El Usuario ya existe o hay algun problema.'
                   return <UserForm disabled={loading} onSubmit={onSubmit} title='Registrarse' error={errorMsg} />
@@ -30,9 +34,12 @@ export const UnregisteredUser = () => (
                   const onSubmit = ({ email, password }) => {
                     const input = { email, password }
                     const variables = { input }
-                    login({ variables }).then(activateAuth).catch((e) => { console.log('Ooops! ') })
+                    login({ variables }).then(({ data }) => {
+                      const { login } = data
+                      activateAuth(login)
+                    }).catch((e) => { console.log('Ooops! ') })
                   }
-                  const errorMsg = error && 'El Usuario ya existe o hay algun problema.'
+                  const errorMsg = error && 'La contrasena no es correcta o el usuario no existe'
                   return <UserForm disabled={loading} error={errorMsg} title='Iniciar Sesion' onSubmit={onSubmit} />
                 }
               }
